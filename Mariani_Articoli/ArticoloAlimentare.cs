@@ -14,20 +14,14 @@ namespace Mariani_Articoli
 
         public ArticoloAlimentare(int codice, string descrizione, double prezzo, bool tessera, int anno) : base(codice, descrizione, prezzo, tessera) { Anno = anno; }
 
-        public override void Sconta()
+        public override void Sconta(double prezzo)
         {
-            if (Anno == DateTime.Now.Year && Tessera) 
+            if (Anno == DateTime.Now.Year) 
             {
-                Prezzo = Prezzo - ((25 * Prezzo) / 100);
+                Prezzo = prezzo - ((20 * prezzo) / 100);
             }
-            if (Anno != DateTime.Now.Year && Tessera) 
-            {
-                Prezzo = Prezzo - ((5 * Prezzo) / 100);
-            }
-            if (Anno == DateTime.Now.Year && !Tessera) 
-            {
-                Prezzo = Prezzo - ((20 * Prezzo) / 100);
-            }
+
+            base.Sconta(Prezzo);
         }
     }
 }

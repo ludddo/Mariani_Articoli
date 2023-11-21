@@ -6,7 +6,33 @@ using System.Threading.Tasks;
 
 namespace Mariani_Articoli
 {
-    internal class Class1
+    internal class ArticoloAlimentareFresco : ArticoloAlimentare
     {
+        private int _giorni;
+
+        public int Giorni { get; set; }
+
+        public ArticoloAlimentareFresco(int codice, string descrizione, double prezzo, bool tessera, int anno, int giorni) : base (codice, descrizione, prezzo, tessera, anno) { Giorni = giorni; }
+
+        public override void Sconta()
+        {
+            int scontoDaApplicare = 10;
+
+            for (int i = 0; i < _giorni; i++) 
+            {
+                scontoDaApplicare--;
+                
+                if (scontoDaApplicare == 0) { break; }
+            }
+
+            if (Tessera)
+            {
+                Prezzo = Prezzo - (((10+scontoDaApplicare) * Prezzo) / 100);
+            }
+            else if (scontoDaApplicare > 0)
+            {
+                Prezzo = Prezzo - (((scontoDaApplicare) * Prezzo) / 100);
+            }
+        }
     }
 }
