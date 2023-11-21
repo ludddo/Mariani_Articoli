@@ -18,20 +18,14 @@ namespace Mariani_Articoli
 
         public ArticoloNonAlimentare(int codice, string descrizione, double prezzo, bool tessera, string matariale, bool riciclabile) : base (codice, descrizione, prezzo, tessera) { Materiale = matariale; Riciclabile = riciclabile; }
 
-        public override void Sconta()
+        public override void Sconta(double prezzo)
         {
-            if (Tessera && Riciclabile) 
+            if (Riciclabile) 
             {
-                Prezzo = Prezzo - ((15 * Prezzo) / 100);
+                Prezzo = prezzo - ((10 * prezzo) / 100);
             }
-            if (Tessera && !Riciclabile)
-            {
-                Prezzo = Prezzo - ((5 * Prezzo) / 100);
-            }
-            if (!Tessera && Riciclabile)
-            {
-                Prezzo = Prezzo - ((10 * Prezzo) / 100);
-            }
+            
+            base.Sconta(Prezzo);
         }
     }
 }

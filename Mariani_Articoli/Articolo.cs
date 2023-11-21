@@ -27,7 +27,7 @@ namespace Mariani_Articoli
             Tessera = tessera;
         }
 
-        virtual public void Sconta(int prezzo)
+        virtual public void Sconta(double prezzo)
         {
             if (Tessera)
             {

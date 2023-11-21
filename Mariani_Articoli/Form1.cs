@@ -16,5 +16,18 @@ namespace Mariani_Articoli
         {
             InitializeComponent();
         }
+
+
+
+        /* Esempio di come si fa un array di oggetto *
+         * 
+         * Articolo[
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         */
     }
 }

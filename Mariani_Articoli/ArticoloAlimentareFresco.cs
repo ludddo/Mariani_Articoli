@@ -14,7 +14,7 @@ namespace Mariani_Articoli
 
         public ArticoloAlimentareFresco(int codice, string descrizione, double prezzo, bool tessera, int anno, int giorni) : base (codice, descrizione, prezzo, tessera, anno) { Giorni = giorni; }
 
-        public override void Sconta(double prezzo)
+        public override void Sconta()
         {
             int scontoDaApplicare = 10;
 
@@ -27,10 +27,10 @@ namespace Mariani_Articoli
 
             if (scontoDaApplicare > 0)
             {
-                Prezzo = prezzo - (((scontoDaApplicare) * prezzo) / 100);
+                Prezzo = Prezzo - (((scontoDaApplicare) * Prezzo) / 100);
             }
 
-            base.Sconta(Prezzo);
+            base.Sconta();
         }
     }
 }
