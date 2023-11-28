@@ -14,7 +14,7 @@ namespace Mariani_Articoli
         protected double _prezzo;
         protected bool _tessera;
 
-        public int Codice { get; set; }
+        public int Codice { get ; set; }
         public string Descrizione { get; set; }
         public double Prezzo { get; set; }
         public bool Tessera { get; set;}
@@ -33,6 +33,21 @@ namespace Mariani_Articoli
             {
                 Prezzo = Prezzo - ((5 * Prezzo) / 100);
             }
+        }
+
+        public int Compare(Articolo articolo1 , Articolo articolo2)
+        {
+            if (articolo1.Prezzo < articolo2.Prezzo)
+                return -1;
+
+            if (articolo1.Prezzo == articolo2.Prezzo)
+                return 0;
+ 
+            if (articolo1.Prezzo > articolo2.Prezzo)
+                return 1;
+
+
+            return 2;
         }
     }
 }

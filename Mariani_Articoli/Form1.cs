@@ -16,5 +16,17 @@ namespace Mariani_Articoli
         {
             InitializeComponent();
         }
+
+        private void alimentare_CheckedChanged(object sender, EventArgs e)
+        {
+            if (alimentare.Checked) { alimentareFresco.Visible = true; }
+            else { alimentareFresco.Visible = false;}
+        }
+
+        private void alimentareFresco_CheckedChanged(object sender, EventArgs e)
+        {
+            if (alimentareFresco.Checked) { alimentareFresco.Visible = true; }
+            else { alimentareFresco.Visible = false;}
+        }
     }
 }
