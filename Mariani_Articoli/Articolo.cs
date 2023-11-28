@@ -27,11 +27,11 @@ namespace Mariani_Articoli
             Tessera = tessera;
         }
 
-        virtual public void Sconta(double prezzo)
+        virtual public void Sconta()
         {
             if (Tessera)
             {
-                Prezzo = prezzo - ((5 * prezzo) / 100);
+                Prezzo = Prezzo - ((5 * Prezzo) / 100);
             }
         }
     }
